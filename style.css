@@ -1,0 +1,259 @@
+@font-face {
+    font-family: hel;
+    src: url(./Fonts/rijG6I_IOXJjsH07UEo2mw.woff2);
+}
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+body, html{
+    background-color: #766479;
+    color: white;
+    font-family: hel, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    position: relative;
+}
+
+#cursor{
+    width: 30px;
+    position: fixed;
+    height: 30px;
+    border-radius: 50%;
+    backdrop-filter: blur(5px);
+    z-index: 9;
+    filter: blur(2px);
+    background-color: rgb(255, 105, 105);
+    transition:  0.2s ease 0.2s ease;
+    pointer-events: none;
+}
+
+.overlay{
+    width:100%;
+    height: 100%;
+    z-index: 10;
+    background-color: transparent;
+}
+
+main{
+    width: 100%;
+    padding: 1rem 2.5rem;
+    position: relative;
+}
+
+nav{
+    top: 0;
+    width: 100%;
+    padding: .5em 1em;
+    position: sticky;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    backdrop-filter: blur(4px);
+    z-index: 8;
+    transition: all ease-in-out .5s;
+}
+
+h1{
+    font-size: 1.4rem;
+    cursor: pointer;
+    transition: all ease .4s;
+
+}
+h1:hover{
+    transform: scale(1.11);
+}
+ul{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.2em;
+}
+
+li{
+    cursor: pointer;
+    list-style-type: none;
+    font-size: .88rem;
+    font-weight: 100;
+    transition: all ease .3s;
+
+}
+
+li:hover{
+    transform: translateY(-3px);
+}
+
+#page1{
+    margin-top: 5%;
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+#page1 h1{
+    cursor: pointer;
+    font-size: 3.4rem;
+    width: 50%;
+    filter: drop-shadow(0px 0px 4px rgba(25, 25, 26, 0.507));
+
+}
+#page2 h1{
+    cursor: pointer;
+    font-size: 3.4rem;
+    width: 50%;
+    filter: drop-shadow(0px 0px 4px rgba(25, 25, 26, 0.507));
+
+}
+#page3 h1{
+    cursor: pointer;
+    font-size: 3.4rem;
+    width: 50%;
+    filter: drop-shadow(0px 0px 4px rgba(25, 25, 26, 0.507));
+
+}
+
+#box1{
+    flex-wrap: nowrap;
+    width: 25%;
+    aspect-ratio: 1/1.4;
+    border-radius: 10px;
+    background-color: rgb(54, 41, 61);
+    display: flex;
+    /* align-items: flex-start; */
+    padding: 1rem;
+    filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.603));
+    flex-direction: column;
+    gap: 1rem;
+    transition: all ease-in-out cubic-bezier(0.19, 1, 0.22, 1);
+
+}
+
+.name{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: .4em;
+}
+
+.logo{
+    width: 10%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: #34343471;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.452));
+
+}
+
+.logo i{
+    font-size: 1.05em;
+    text-align: center;
+}
+
+.name h4{
+    font-size: .90rem;
+    font-weight: 100;
+}
+#box1 img{
+    flex-wrap: nowrap;
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+    aspect-ratio: 1/1;
+    background-color: #343434;
+    position: relative;
+    z-index: 3  ;
+    filter: drop-shadow(0px 0px 2px black);
+}
+
+.heart{
+    position: absolute;
+    top: 40%;
+    left: 30%;
+    transform: translate(-50%, -50%) ; /* Perfect centering */
+    font-size: 6rem;
+    z-index: 5;
+    transition: all 0.5s ease-in-out;
+    opacity: 0;
+
+}
+
+.like{
+    display: flex;
+    align-items: center;
+    width: 50%;
+    gap: .7em;
+}
+
+.like i{
+    font-size: 1.5em;
+    cursor: pointer;
+    filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.425));
+}
+#page2{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 3rem;
+}
+#page3{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+#page4{
+    margin-top: 5%;
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    gap: 3rem;
+}
+
+.elem{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+
+}
+.elem img{
+    width: 10rem;
+    border-radius: 10px;
+    aspect-ratio: 1;
+    object-fit: cover;
+    margin-left: 1rem;
+}
+
+button{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: .5em 1em;
+    transform: translate(-50% , -50%);
+    border-radius: 5px;
+    border: none;
+    background-color: #343434;
+    color: white;
+    font-size: 1.3rem;
+    transition: all ease .5s;
+    z-index: 11;
+    box-shadow: 2px 2px 6px rgb(44, 44, 44);
+}
+
+button:active{
+    transform: scale(0.6);
+}
