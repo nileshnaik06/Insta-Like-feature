@@ -2,35 +2,11 @@ function anim() {
 let crsr = document.querySelector("#cursor");
 let main = document.querySelector("main");
 let nav = document.querySelector("nav");
-let h1 = document.querySelectorAll("h1");
-let lists = document.querySelectorAll("li");
 
 main.addEventListener("mousemove",function (dets) {
     crsr.style.left = dets.x  + "px"
     crsr.style.top = dets.y + "px"
 })
-
-lists.forEach((li)=>{
-    li.addEventListener("mouseenter",function () {
-        crsr.style.mixBlendMode = "color-burn";
-        crsr.style.transform = "scale(.8)"
-    })
-    li.addEventListener("mouseleave",function () {
-        crsr.style.mixBlendMode = "normal";
-        crsr.style.transform = "scale(1)"
-        
-    })
-})
-h1.forEach((header)=>{
-    header.addEventListener("mouseenter",function () {
-        crsr.style.mixBlendMode = "color-burn";
-    })
-    header.addEventListener("mouseleave",function () {
-        crsr.style.mixBlendMode = "normal";
-    })
-})
-
-
 
 window.addEventListener("wheel",function (det) {
     if (det.deltaY > 0) {
@@ -42,9 +18,9 @@ window.addEventListener("wheel",function (det) {
 })
 
 }
-anim()
 
 function like () {
+let crsr = document.querySelector("#cursor");
 let mainImages = document.querySelectorAll(".mainImg")
 let hearts = document.querySelectorAll(".heart")
 let likes = document.querySelectorAll(".hLike")
@@ -64,6 +40,20 @@ mainImages.forEach((mImg, index) => {
         heart.style.opacity = "0";
         }, 1000);
     });
+
+    mImg.addEventListener("mouseenter", function () {
+        crsr.style.backgroundColor = "transparent"
+        crsr.style.backdropFilter = "blur(1px)"
+    })
+    mImg.addEventListener("mouseleave", function () {
+        crsr.style.mixBlendMode = "difference"
+        crsr.style.width = "30px"
+        crsr.style.height = "30px"
+        crsr.style.backgroundColor = "rgb(255, 255, 255)"
+        crsr.style.backdropFilter = "none"
+
+
+    })
 });
 likes.forEach((like, index) => {
     like.addEventListener("click", function (e) {
@@ -74,15 +64,17 @@ likes.forEach((like, index) => {
         heart.style.transform = "scale(1.1)"; // Reset size
         heart.style.transition = "opacity 0.5s ease-in, transform 0.3s ease-in-out";
 
+
         // Hide the heart after 1 second
         setTimeout(() => {
             heart.style.opacity = "0";
 
         }, 1000);
     });
+
+
 });
 }
-like();
 
 function randImg() {
     let btn = document.querySelector("#btn")
@@ -119,7 +111,7 @@ btn.addEventListener("click", function () {
 })
 }
 
-randImg()
-
-
+anim()// cursor wheel and nav animation
+randImg()// random image generator using createElment 
+like();// instagram like feature
 
